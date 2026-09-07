@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Forum&family=Poppins:wght@400;700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary : #536942;
+    --secondary : #ffd936;
+    --white : #efefef;
+}
+
+body{
+    font-family: "DM Sans", sans-serif;
+    color: var(--primary);
+}
+
+a{
+    text-decoration: none;
+}
+
+#main{
+    background-image: url(main.png);
+    height: 70vh;
+    background-position: bottom center;
+    background-size: cover;
+    position: relative;
+}
+
+.container{
+    max-width: 1200px;
+    padding: 16px;
+    margin: auto;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.nav-list{
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    align-items: center;
+}
+.nav-list a{
+    color: var(--white);
+}
+
+.btn{
+    padding: 12px 20px;
+    background: transparent;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.secondary-btn{
+    border: 2px solid var(--white);
+    color: var(--white);
+    font-weight: bold;
+}
+
+.primary-btn{
+    border: none;
+    background: var(--secondary);
+    color: var(--white);
+}
+
+.main-content{
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: var(--white);
+    margin-top: 20px;
+}
+
+.main-content .intro-heading{
+    font-size: 50px;
+}
+
+.main-content .main-heading{
+    font-size: 120px;
+    margin-top: -30px;
+
+}
+
+.main-content p{
+    max-width: 250px;
+    margin-left: 35px;
+    margin-bottom: 15px;
+}
+
+#menu-btn{
+    font-size: 40px;
+    display: none;
+    position: absolute;
+    color: #fff;
+    top: 10px;
+    right: 15px;
+}
+
+.section-title h1{
+    font-size: 50px;
+    text-align: center;
+}
+
+.section-title .line{
+    width: 150px;
+    height: 4px;
+    border: 10px;
+    background: var(--secondary);
+    margin: auto;
+}
+
+.section{
+    margin: 80px auto;
+}
+
+.services{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.service{
+    width: 350px;
+}
+
+.service img{
+    max-width: 100%;
+    border-radius: 7px;
+    transition: transform 0.3s ease;
+}
+
+.service img:hover{
+    transform: scale(1.05);
+}
+
+#testimonial{
+    background-color: #f1f2fa;
+}
+
+#testimonial .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 500px;
+    gap: 20px;
+    padding: 50px 16px;
+}
+
+#testimonial .container h1{
+    text-align: center;
+    font-size: 30px;
+    font-family: "Forum";
+}
+
+#testimonial .profile{
+    display: flex;
+    flex-direction: column;
+}
+
+.about-us .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 100px;
+}
+
+.about-us .container .about-content{
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: start;
+}
+
+.about-us .container .about-content h1{
+    font-family: "Forum";
+    font-size: 30px;
+}
+
+
+#questions{
+    min-height: 500px;
+    background-image: url(main-2.png);
+    background-position: bottom center;
+    background-position: cover;
+}
+
+#questions .container{
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+    text-align: center;
+}
+
+#questions .container h1{
+    font-size: 50px;
+}
+
+footer{
+    background-color: var(--gray);
+}
+
+footer .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 16px;
+}
+
+.footer-links{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    list-style: none;
+}
+
+.footer-links a{
+    color: var(--primary);
+}
+
+@media screen and (max-width:520px){
+    #menu-btn{
+        display: block;
+        z-index: 1;
+    }
+    .nav-list{
+        flex-direction: column;
+        background: gray;
+        position: absolute;
+        top: 0;
+        right: -900px;
+        width: 80%;
+        height: 100vh;
+        padding-top: 80px;
+        z-index: 1;
+        transition: all 0.3s ease;
+    }
+
+    .nav-list.active{
+        right: 0;
+    }
+
+    .nav-list li:not(:last-child){
+        text-align: left;
+        width: 100%;
+        padding: 10px 30px;
+        border-bottom: 2px solid var(--white);
+    }
+
+    .about-us .container{
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    footer .container{
+        flex-direction: column;
+        gap: 20px;
+    }
+}
